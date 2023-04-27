@@ -1,5 +1,5 @@
 <template>
-   <div class="tela-1">
+   <div id="home" class="tela-1">
     <div class="informativo">
       <div class="info">
         <div class="titulo"><span>O</span>lá, sou Marcos</div>
@@ -10,8 +10,10 @@
             carreira.
           </span>
         </div>
-        <ButtonApp acao="()=> {console.log('aqui')}" texto="currículo" />
-      </div>
+     
+        <ButtonApp acao="javascipt:window.open('../assets/curriculo.pdf')" texto="currículo" />
+        
+        </div>
     </div>
     <div class="imagem">
         <div class="borda-imagem">
@@ -24,10 +26,16 @@
 <script>
 import ButtonApp from "../components/Button.vue"
 
+
 export default {
 name: 'Tela1App',
 components:{
   ButtonApp
+},
+data(){
+  return{
+    curriculo:"../assets/curriculo.pdf"
+  }
 }
 }
 </script>
@@ -71,7 +79,7 @@ components:{
 
 .informativo .info {
   margin-top: 30%;
-  max-width: 640px;
+  max-width: 750px;
 }
 
 .imagem {
@@ -99,6 +107,10 @@ components:{
 }
 
 @media (max-width:1110px) {
+  .borda-imagem img{
+    width: calc(100vw - 160px);
+    height: calc(100vh - 170px);
+  }
   .tela-1{
     display: block;
   }
@@ -129,8 +141,8 @@ components:{
     margin-bottom: 15vh;
     }
   .informativo{
-    padding-right: 25px;
-    padding-left: 85px;
+    padding: 0px 40px;
+    padding-right: 20px;
   }
   .informativo .info {
     margin-top: 45%;

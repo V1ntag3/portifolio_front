@@ -2,19 +2,23 @@
   <MenuApp />
   <TelaOne />
   <TelaTwo />
+  <TelaThree />
+
 </template>
 
 <script>
 import MenuApp from "./components/Menu.vue"
 import TelaOne from "./views/TelaOne.vue"
 import TelaTwo from "./views/TelaTwo.vue"
+import TelaThree from "./views/TelaThree.vue"
 
 export default {
   name: 'App',
   components: {
     MenuApp,
     TelaOne,
-    TelaTwo
+    TelaTwo,
+    TelaThree
   }
 }
 </script>

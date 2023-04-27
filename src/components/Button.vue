@@ -1,5 +1,5 @@
 <template>
-        <div class="botao-completo" >
+        <div :onclick="acao" class="botao-completo" >
             <div class="botao">{{ texto }}</div>
             <div class="botao botao-sombra">{{ texto }}</div>
         </div>
