@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MenuApp />
+  <TelaOne />
+  <TelaTwo />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MenuApp from "./components/Menu.vue"
+import TelaOne from "./views/TelaOne.vue"
+import TelaTwo from "./views/TelaTwo.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MenuApp,
+    TelaOne,
+    TelaTwo
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url(assets/fonts-Abster.css);
+@import url(assets/fonts-Poppins.css);
+
+* {
+  border: none;
+  outline: none;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins-Regular';
+  list-style-type: none;
+  scroll-behavior: smooth;
 }
+
+body {
+  background-color: #4D4949;
+}
+
+
 </style>
