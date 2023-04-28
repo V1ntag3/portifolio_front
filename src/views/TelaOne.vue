@@ -70,7 +70,7 @@ data(){
 }
 
 .informativo {
-  width: calc(55% - 120px);
+  width: calc(55%);
   height: 100vh;
   display: inline-block;
   padding: 0px 60px;

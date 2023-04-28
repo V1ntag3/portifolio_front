@@ -2,8 +2,9 @@
   <div class="tela">
     <div id="cert" class="titulo"> <span>portifólio</span> </div>
     <div class="portifolio">
-      <div class="item">        <div class="ver">ver projeto</div>
-</div>
+      <div class="item">
+        <div class="ver">ver projeto</div>
+      </div>
       <div style="background-color: blue;" class="item">
         <div class="ver">ver projeto</div>
       </div>
@@ -71,15 +72,15 @@ export default {
 }
 
 .ver {
-  margin-top: calc(50% - 25px);
-  width: 100%;
+  margin-top: calc(50% - 40px);
+  width: calc(100% - 40px);
   text-align: center;
   background-color: white;
-  height: 60px;
+  height: 40px;
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
-  padding: 10px;
+  padding: 20px;
   color: #000000;
   opacity: 0;
   transition: 0.3s;
@@ -106,18 +107,18 @@ export default {
     height: 100px;
     width: 100px;
   }
+
   .ver {
-  margin-top: calc(50% - 20px);
-  width: 100%;
-  text-align: center;
-  background-color: white;
-  height: 40px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  padding: 10px;
-  color: #000000;
-  opacity: 0;
-  transition: 0.3s;
-}
+    margin-top: calc(50% - 20px);
+    width: calc(100% - 20px);
+    text-align: center;
+    background-color: white;
+    height: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px;
+    color: #000000;
+    transition: 0.3s;
+  }
 }</style>

@@ -252,7 +252,7 @@ svg path {
 @media (max-width:570px) {
     .menu-opcoes-aberto {
         max-width: calc(100% - 140px);
-        max-height: 75vh;
+        max-height: calc(100vh - 160px);
         width: 100%;
         height: 100%;
     }
@@ -262,12 +262,12 @@ svg path {
     }
 
     .social {
-        margin-top: 150px;
-        width: auto;
-        display: flex;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
     }
 
     .opcoes-aberto {

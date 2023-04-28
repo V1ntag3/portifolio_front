@@ -3,7 +3,7 @@
   <TelaOne />
   <TelaTwo />
   <TelaThree />
-
+  <TelaFour />
 </template>
 
 <script>
@@ -11,6 +11,7 @@ import MenuApp from "./components/Menu.vue"
 import TelaOne from "./views/TelaOne.vue"
 import TelaTwo from "./views/TelaTwo.vue"
 import TelaThree from "./views/TelaThree.vue"
+import TelaFour from "./views/TelaFour.vue"
 
 export default {
   name: 'App',
@@ -18,7 +19,8 @@ export default {
     MenuApp,
     TelaOne,
     TelaTwo,
-    TelaThree
+    TelaThree,
+    TelaFour
   }
 }
 </script>
