@@ -68,7 +68,7 @@ export default {
 
 .item:hover {
   scale: 1.3;
-
+  margin-left: 30px;
 }
 
 .ver {

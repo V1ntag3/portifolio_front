@@ -96,7 +96,6 @@ export default {
   height: calc(100vh - 30px);
   display: inline-block;
   border-left: 3px solid #FFFFFF;
-  margin-top: 30px;
   padding: 0px 40px;
 }
 

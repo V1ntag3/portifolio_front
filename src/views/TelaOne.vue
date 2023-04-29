@@ -10,7 +10,7 @@
             carreira.
           </span>
         </div>
-     
+        <a :src="curriculo" target="_blank" rel="noopener noreferrer"></a>
         <ButtonApp acao="javascipt:window.open('../assets/curriculo.pdf')" texto="currículo" />
         
         </div>
