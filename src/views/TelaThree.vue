@@ -13,13 +13,14 @@
   <div v-bind:class="{ 'modal-ativo': ativo }" class="modal-projeto">
     <div class="modal-flex">
       <div class="imagem-modal">
-        <img class="img-tela" :src="`${publicPath}${projetos[currentIndex].imagemTela}`" alt="" srcset=""> 
+        <img class="img-tela" :src="`${publicPath}${projetos[currentIndex].imagemTela}`" alt="" srcset="">
         <div v-if="projetos[currentIndex].isMy == true" class="name-imagem"><span> <img src="../assets/images/check.svg"
               alt=""> design by me</span></div>
       </div>
       <div class="informacoes">
 
-        <h1 :style="'font-family:'+projetos[currentIndex].fontText" class="titulo-info">{{ projetos[currentIndex].nome }}</h1>
+        <h1 :style="'font-family:' + projetos[currentIndex].fontText" class="titulo-info">{{ projetos[currentIndex].nome }}
+        </h1>
         <p class="descricao">{{ projetos[currentIndex].descricao }}</p>
         <h2 class="sub-titulo">Tecnologias Utilizadas</h2>
         <ul>
@@ -108,13 +109,13 @@ export default {
     fecharModal() {
       this.ativo = false
       var el = document.querySelector('body')
-      el.style.overflow =""
+      el.style.overflow = ""
     },
     abrirModal(index) {
       this.currentIndex = index
       this.ativo = true
       var el = document.querySelector('body')
-      el.style.overflow ="hidden"
+      el.style.overflow = "hidden"
     }
   }
 }
@@ -128,9 +129,9 @@ export default {
   top: 30px;
   right: 27px;
   padding-top: 20px;
-    margin-top: -20px;
-    height: 40px;
-    cursor: pointer;
+  margin-top: -20px;
+  height: 40px;
+  cursor: pointer;
 }
 
 .modal-projeto {
@@ -174,17 +175,19 @@ export default {
   transition: 0.5s;
 }
 
-.img-tela{
+.img-tela {
   max-width: 490px;
-    max-height: 214px;
-    width: 100%;
-    height: 96vw;
+  max-height: 212px;
+  width: 100%;
+  height: calc(40vw - 2px);
 }
 
 .imagem-modal {
   background-color: white;
-  width: 490px;
-  height: 216px;
+  max-width: 490px;
+  max-height: 214px;
+  width: 100%;
+  height: calc(40vw - 30px);
   position: relative;
   padding: 1px;
   display: flex;
@@ -197,9 +200,11 @@ export default {
   color: #3183FF;
 
 }
-.name-imagem .img-tela{
+
+.name-imagem .img-tela {
   width: 100%;
 }
+
 .informacoes {
   width: calc(100% - 400px);
   margin-left: 20px;
@@ -234,7 +239,7 @@ export default {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .titulo {
@@ -263,13 +268,15 @@ export default {
 
 
 }
-.img-port{
+
+.img-port {
   object-fit: cover;
   height: 200px;
   width: 200px;
   transition: 0.2s;
 }
-.item:hover .img-port{
+
+.item:hover .img-port {
   scale: 1.3;
   margin-left: 30px;
   z-index: 3;
@@ -287,7 +294,7 @@ export default {
   opacity: 0;
   transition: 0.3s;
   margin-top: -135px;
-    position: relative;
+  position: relative;
 }
 
 .item:hover .ver {
@@ -295,9 +302,11 @@ export default {
   scale: 1.3;
   margin-left: 30px;
 }
-.ver:hover .img-port{
+
+.ver:hover .img-port {
   scale: 1.3;
 }
+
 @media (max-width: 1110px) {
   .close-modal {
     display: unset;
@@ -328,9 +337,9 @@ export default {
 
   .imagem-modal {
     max-width: 490px;
-    max-height: 216px;
+    max-height: 214px;
     width: 100%;
-    height: 96vw;
+    height: calc(47vw - 30px);
     display: block;
     margin: auto;
   }
@@ -353,7 +362,7 @@ export default {
     width: 100%;
     display: grid;
     margin: auto;
-   
+
   }
 
 }
@@ -366,8 +375,10 @@ export default {
   }
 
   .imagem-modal {
-    height: calc(90vh);
-
+    max-width: 490px;
+    max-height: 212px;
+    width: 100%;
+    height: calc(40vw);
   }
 
   .informacoes .titulo-info {
@@ -400,15 +411,17 @@ export default {
     height: 100px;
     width: 100px;
   }
-  .img-port{
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
-  transition: 0.5s;
-  z-index: 1;
-}
+
+  .img-port {
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
   .ver {
-    margin-top: calc(50% - 20px);
+    margin-top: calc(50% - 120px);
     width: calc(100%);
     text-align: center;
     background-color: white;
@@ -421,7 +434,7 @@ export default {
     transition: 0.3s;
   }
 }
-@media (min-width: 515px){
+
+@media (min-width: 515px) {
   height: ;
-}
-</style>
+}</style>
