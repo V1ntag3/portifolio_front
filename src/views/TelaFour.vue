@@ -5,8 +5,9 @@
       <div class="texto">
         {{ dados }}
       </div>
-      <div class="email">{{ email }}</div>
-      <div class="celular">{{ celular }}</div>
+      <div class="celular"><img src="../assets/images/whatsapp.svg" alt="" srcset=""> {{ celular }}</div>
+      <div class="email"><img src="../assets/images/email.svg" alt="" > {{ email }}</div>
+
     </div>
 
     <div class="inputs">
@@ -14,10 +15,10 @@
       <input type="text" placeholder="assunto" class="input">
       <textarea name="" id="" cols="30" rows="10" placeholder="mensagem" class="input"></textarea>
     </div>
-    <div style="margin-top: 25px; margin-right: 13vw;    height: 100px;">
+    <div style="margin-top: 25px; margin-right: 15vw;    height: 100px;">
       <ButtonApp texto="enviar" />
     </div>
-    <div class="footid" style="    margin-bottom: 20px;"> <span> <a href="">BY V1NTAG3</a> </span> </div>
+    <div class="footid" style="    margin-bottom: 20px;"> <span><a :href="gitHub" _black>BY V1NTAG3</a> </span> </div>
   </div>
 </template>
 
@@ -30,6 +31,7 @@ export default {
   },
   data() {
     return {
+      gitHub: "https://github.com/V1ntag3",
       dados: "Eu sou um desenvolvedor em busca de propostas de trabalho ou freelas, para mais perguntas ou propostras basta entrar em contato pelos canais abaixo ou preenchendo o formulário.",
       celular: "(86) 9 99851 - 4018",
       email: "marcos.vinicius.r.alencar@gmail.com"
@@ -51,13 +53,13 @@ export default {
   font-size: 40px;
   color: #FFFFFF;
   text-align: center;
-  margin-top: 65px;
+  margin-top: 60px;
   margin-bottom: 20px;
 }
 
 .dados {
   height: auto;
-  width: calc(100% - 30vw);
+  width: 100%;
   background-color: #070707;
   padding: 20px 15vw;
   background-color: #070707;
@@ -78,8 +80,12 @@ export default {
   font-weight: 400;
   font-size: 15px;
   color: #FFFFFF;
+  padding: 2px 0px;
 }
-
+.email img,
+.celular img{
+ margin-right: 5px;
+}
 .input {
   background-color: #070707;
   color: #FFFFFF;
@@ -118,9 +124,7 @@ export default {
 }
 
 @media (max-width: 1110px) {
-  .titulo {
-    margin-bottom: 20px;
-  }
+
 }
 
 @media (max-width:665px) {
@@ -128,5 +132,12 @@ export default {
     font-size: 30px;
     margin-top: 30px;
     margin-bottom: 10px;
+  }
+  .dados{
+    padding: 20px 10vw;
+  }
+  .input{
+    width: calc(100% - 20vw);
+    margin: 10px 10vw;
   }
 }</style>

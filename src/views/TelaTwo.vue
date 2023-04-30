@@ -8,43 +8,26 @@
 
 
     <div id="tags" style="font-size: 10%">
-      <a href="#hab" style="font-size: 4.83ex">Vue.js</a>
-      <a href="#hab" style="font-size: 5.61ex">REST</a>
-      <a href="#hab" style="font-size: 10.64ex">Figma</a>
-      <a href="#hab" style="font-size: 6.47ex">Axios</a>
-      <a href="#hab" style="font-size: 8.32ex">JQuery</a>
-      <a href="#hab" style="font-size: 5.74ex">React.js</a>
-      <a href="#hab" style="font-size: 5.16ex">TypeScript</a>
-      <a href="#hab" style="font-size: 5.74ex">HTML</a>
-      <a href="#hab" style="font-size: 5.16ex">CSS</a>
-      <a href="#hab" style="font-size: 6.36ex">React Native</a>
-      <a href="#hab" style="font-size: 5.32ex">Python</a>
-      <a href="#hab" style="font-size: 7.68ex">Git</a>
-      <a href="#hab" style="font-size: 6.69ex">Django</a>
-      <a href="#hab" style="font-size: 7.8ex">JavaScript</a>
-      <a href="#hab" style="font-size: 8.47ex">JSON</a>
-      <a href="#hab" style="font-size: 5.65ex">BootStrap 5</a>
-      <a href="#hab" style="font-size: 10.77ex">CSS</a>
-
+      <a v-for="(item, index) in tecnologias" :key="index" href="#hab" style="font-size: 35px">{{ item }}</a>
     </div>
 
 
     <div class="imagem">
       <div id="cert" class="titulo"> <span>certificações</span> </div>
-      <div class="curso">
-        <div class="icon"></div>
+      <div v-for="(item, index) in certificados" :key="index" class="curso">
+        <div class="icon"><img src="" alt=""></div>
         <div class="dados">
-          <div class="nome">Desenvolvimento Web FullStack</div>
-          <div class="local">ProgramdorBR - 2022</div>
+          <div class="nome">{{ item.nome }}</div>
+          <div class="local">{{ item.local }} - {{ item.data }}</div>
         </div>
       </div>
       <div id="exp">
         <div id="cert" class="titulo"> <span>experiência</span> </div>
-        <div class="exp">
+        <div v-for="(item,index) in experiencias" :key="index" class="exp">
           <div class="dados">
-            <div class="cargo">Desenvolvedor Front End - Estágio</div>
-            <div class="local">InfoG2 Tecnologia LTDA- Teresina - PI</div>
-            <div class="data">Out 2022 - Abr 2023</div>
+            <div class="cargo">{{ item.cargo }} - {{ item.tipo }}</div>
+            <div class="local">{{ item.local }}</div>
+            <div class="data">{{ item.dataInicial }} - {{ item.dataFinal }}</div>
           </div>
         </div>
       </div>
@@ -62,6 +45,47 @@ export default {
   components: {
 
   },
+  data() {
+    return {
+      tecnologias: [
+        'Vue.js',
+        'REST',
+        'Figma',
+        'Axios',
+        'JQuery',
+        'React.js',
+        'TypeScript',
+        'HTML',
+        'React Native',
+        'Python',
+        'Git',
+        'Django',
+        'JavaScript',
+        'JSON',
+        'BootStrap 5',
+        'CSS',
+        'Ajax',
+      ],
+      certificados:[
+        {
+          imagem:"",
+          nome:"Desenvolvimento Web FullStack",
+          local:"ProgramdorBR",
+          data:"2022"
+        }
+      ],
+      experiencias:[
+        {
+          cargo:"Desenvolvedor Front-End",
+          tipo:"Estágio",
+          local:"InfoG2 Tecnologia LTDA - Teresina - PI",
+          dataInicial:"Out 2022",
+          dataFinal:"Abr 2023"
+        }
+      ]
+    }
+
+  },
   created() {
 
   }
@@ -70,7 +94,8 @@ export default {
 
 <style scoped>
 .tela {
-  display: flex;margin-top: 30px;
+  display: flex;
+  margin-top: 30px;
 }
 
 .titulo {
@@ -80,20 +105,20 @@ export default {
   font-size: 40px;
   color: #FFFFFF;
   text-align: center;
-  margin-top: 65px;
-  margin-bottom: 15px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .informativo {
   width: 50%;
-  height: 100vh;
+  height: auto;
   display: inline-block;
 }
 
 
 .imagem {
-  width: calc(50% - 80px);
-  height: calc(100vh - 30px);
+  width: 50%;
+  height: auto;
   display: inline-block;
   border-left: 3px solid #FFFFFF;
   padding: 0px 40px;
@@ -162,9 +187,6 @@ export default {
 
   }
 
-  .titulo {
-    margin-bottom: 5vh;
-  }
 }
 
 @media (max-width:665px) {

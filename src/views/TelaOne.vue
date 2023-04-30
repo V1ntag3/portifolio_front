@@ -1,18 +1,16 @@
 <template>
-   <div id="home" class="tela-1">
+   <div id="home" class="tela">
     <div class="informativo">
       <div class="info">
         <div class="titulo"><span>O</span>lá, sou Marcos</div>
         <div class="sub-titulo">
           <span>
-            Aqui você poderar ver um pouco do meu trabalho como desenvolvedor , minhas qualificações e projetos durate
-            minha
-            carreira.
+            {{ mensagemInicial }}
           </span>
         </div>
-        <a :src="curriculo" target="_blank" rel="noopener noreferrer"></a>
-        <ButtonApp acao="javascipt:window.open('../assets/curriculo.pdf')" texto="currículo" />
-        
+        <a :href="`${publicPath}${curriculo}`" target="_blank">
+        <ButtonApp  texto="currículo" />
+      </a>
         </div>
     </div>
     <div class="imagem">
@@ -34,19 +32,20 @@ components:{
 },
 data(){
   return{
-    curriculo:"../assets/curriculo.pdf"
+    publicPath: process.env.BASE_URL,
+    curriculo:"curriculo.pdf",
+    mensagemInicial:"Aqui você poderar ver um pouco do meu trabalho como desenvolvedor, minhas qualificações e meus projetos pessoais durate minha carreira."
   }
 }
 }
 </script>
 
 <style scoped>
-.tela-1 {
+.tela {
   display: flex;
 }
 
 .titulo {
-  font-family: 'Poppins-Regular';
   font-style: normal;
   font-weight: 600;
   font-size: 54px;
@@ -111,7 +110,7 @@ data(){
     width: calc(100vw - 160px);
     height: calc(100vh - 170px);
   }
-  .tela-1{
+  .tela{
     display: block;
   }
   .informativo {

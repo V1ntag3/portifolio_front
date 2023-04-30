@@ -164,8 +164,8 @@ export default {
 
     max-width: 460px;
     max-height: 535px;
-    width: 330px;
-    height: 435px;
+    width: 100%;
+    height: 100%;
     padding: 50px;
     padding-top: 70px;
     background-color: #070707;
@@ -219,6 +219,7 @@ li a {
 
 .social-aberto {
     margin-top: 100px;
+    width: 100%;
     opacity: 1;
 }
 
@@ -230,6 +231,7 @@ li a {
     display: inline-grid;
     margin: 0px 30px;
     transition: 0.5s;
+    padding: 5PX;
 
 }
 
@@ -251,8 +253,8 @@ svg path {
 
 @media (max-width:570px) {
     .menu-opcoes-aberto {
-        max-width: calc(100% - 140px);
-        max-height: calc(100vh - 160px);
+        max-width: calc(100% - 40px);
+        max-height: calc(100vh - 40px);
         width: 100%;
         height: 100%;
     }

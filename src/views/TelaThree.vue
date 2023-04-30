@@ -2,43 +2,233 @@
   <div class="tela">
     <div id="cert" class="titulo"> <span>portifólio</span> </div>
     <div class="portifolio">
-      <div class="item">
-        <div class="ver">ver projeto</div>
-      </div>
-      <div style="background-color: blue;" class="item">
-        <div class="ver">ver projeto</div>
-      </div>
 
-      <div style="background-color: aqua;" class="item">
-        <div class="ver">ver projeto</div>
-      </div>
-
-      <div style="background-color: blueviolet;" class="item">
-        <div class="ver">ver projeto</div>
-      </div>
-
-      <div style="background-color: yellow;" class="item">
+      <div v-for="(item, index) in projetos" :key="index" @click="abrirModal(index)" class="item">
         <div class="ver">ver projeto</div>
       </div>
 
     </div>
   </div>
+  <div v-bind:class="{ 'modal-ativo': ativo }" class="modal-projeto">
+    <div class="modal-flex">
+      <div class="imagem-modal">
+        <div v-if="projetos[currentIndex].isMy == true" class="name-imagem"><span> <img src="../assets/images/check.svg"
+              alt=""> design by me</span></div>
+      </div>
+      <div class="informacoes">
+
+        <h1 class="titulo-info">{{ projetos[currentIndex].nome }}</h1>
+        <p class="descricao">{{ projetos[currentIndex].descricao }}</p>
+        <h2 class="sub-titulo">Tecnologias Utilizadas</h2>
+        <ul>
+          <li v-for="(item, index) in projetos[currentIndex].tecnologias" :key="index">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="botoes">
+      <a v-if="projetos[currentIndex].siteProjeto != ''" :href="projetos[currentIndex].siteProjeto" target="_blank">
+        <ButtonApp classB="button-modal" texto="acessar projeto" />
+      </a>
+      <a v-if="projetos[currentIndex].front != ''" :href="projetos[currentIndex].front" target="_blank">
+        <ButtonApp classB="button-modal" texto="repositório front" />
+      </a>
+      <a v-if="projetos[currentIndex].back != ''" :href="projetos[currentIndex].back" target="_blank">
+        <ButtonApp classB="button-modal" texto="repositório back" />
+      </a>
+      <a v-if="projetos[currentIndex].design != ''" :href="projetos[currentIndex].design" target="_blank">
+        <ButtonApp classB="button-modal" texto="design" />
+      </a>
+    </div>
+    <div @click="fecharModal()" class="close-modal">
+      <span class="line line-one-aberto"></span>
+      <span class="line line-two-aberto"></span>
+    </div>
+  </div>
+  <div v-bind:class="{ 'modal-background-ativo': ativo }" @click="fecharModal()" class="modal-background">
+
+  </div>
 </template>
 
 <script>
-
+import ButtonApp from '../components/Button.vue'
 export default {
   name: 'TelaTree',
   components: {
-
+    ButtonApp
+  },
+  data() {
+    return {
+      ativo: false,
+      currentIndex: 0,
+      projetos: [
+        {
+          nome: "Apresentação e Portifólio",
+          fontText: "Poppins-Regular",
+          descricao: "Meu site onde faço uma apresentação sobre mim e mostro as tecnologia que eu conheço e os projetos que desenvolvi.",
+          tecnologias: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Vue.js"
+          ],
+          imagemTela: "",
+          siteProjeto: "https://github.com/V1ntag3/portifolio_front",
+          front: "",
+          back: "",
+          design: "https://www.figma.com/file/0UAQjCP4Q6J94cN6yTDrTq/Portif%C3%B3lio?t=Hj0hwq0BNnylU18h-6",
+          isMy: true
+        },
+        {
+          nome: "Churrascometro",
+          fontText: "Bettany",
+          descricao: "Web App onde se pode calcular a quantidade de carne, refrigerante e ceverja que será necessario em um churrasco",
+          tecnologias: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          imagemTela: "",
+          siteProjeto: "https://v1ntag3.github.io/churrascometro/",
+          front: "https://github.com/V1ntag3/churrascometro",
+          back: "",
+          design: "",
+          isMy: true
+        }
+      ]
+    }
   },
   created() {
 
+    this.ativo = false
+  },
+  methods: {
+    fecharModal() {
+      this.ativo = false
+    },
+    abrirModal(index) {
+      this.currentIndex = index
+      this.ativo = true
+    }
   }
 }
 </script>
 
 <style scoped>
+.close-modal {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 27px;
+}
+
+.modal-projeto {
+  border: 3px solid white;
+  background-color: black;
+  width: 90%;
+  height: 80%;
+  position: fixed;
+  top: -100%;
+  left: 5%;
+  z-index: 10;
+  overflow: hidden;
+  padding: 40px;
+  overflow-y: auto;
+  transition: 0.5s;
+}
+
+.modal-background-ativo {
+  opacity: 1 !important;
+  z-index: 9 !important;
+}
+
+.modal-ativo {
+  top: 10%;
+  left: 5%;
+}
+
+.modal-flex {
+  display: flex;
+}
+
+.modal-background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background: rgba(7, 7, 7, 0.62);
+  z-index: -10;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+
+
+.imagem-modal {
+  background-color: white;
+  width: 490px;
+  height: 470px;
+  position: relative;
+  padding: 1px;
+  display: flex;
+}
+
+.name-imagem span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #3183FF;
+
+}
+
+.informacoes {
+  width: calc(100% - 400px);
+  margin-left: 20px;
+}
+
+.informacoes .titulo-info {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 60px;
+  color: #FFFFFF;
+}
+
+.informacoes .descricao {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #FFFFFF;
+}
+
+.informacoes .sub-titulo {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+
+  color: #FFFFFF;
+}
+
+.informacoes ul li {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+
+  color: #FFFFFF;
+
+}
+
+.botoes {
+  margin-top: 10px;
+  height: 70px;
+  width: 100%;
+  display: flex;
+}
+
 .titulo {
   font-family: 'Poppins-Bold' !important;
   font-style: normal;
@@ -46,8 +236,8 @@ export default {
   font-size: 40px;
   color: #FFFFFF;
   text-align: center;
-  margin-top: 65px;
-  margin-bottom: 15px;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .portifolio {
@@ -73,10 +263,10 @@ export default {
 
 .ver {
   margin-top: calc(50% - 40px);
-  width: calc(100% - 40px);
+  width: 100%;
   text-align: center;
   background-color: white;
-  height: 40px;
+  height: 75px;
   font-style: normal;
   font-weight: 700;
   font-size: 25px;
@@ -91,12 +281,96 @@ export default {
 }
 
 @media (max-width: 1110px) {
-  .titulo {
-    margin-bottom: 5vh;
+  .close-modal {
+    display: unset;
   }
+
+
+  .modal-projeto {
+
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0px;
+    z-index: 10;
+    overflow: hidden;
+    padding: 40px;
+    overflow-y: auto;
+    padding-top: 60px;
+  }
+
+  .modal-ativo {
+    top: 0%;
+    left: 0%;
+  }
+
+  .modal-flex {
+    display: block;
+  }
+
+  .imagem-modal {
+    max-width: 490px;
+    max-height: 470px;
+    width: 100%;
+    height: 96vw;
+    display: block;
+    margin: auto;
+  }
+
+  .name-imagem span {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #3183FF;
+
+  }
+
+  .informacoes {
+    width: 100%;
+    margin-left: 20px;
+  }
+
+  .botoes {
+    height: 70px;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+
 }
 
 @media (max-width:665px) {
+  .modal-projeto {
+    padding: 30px;
+    padding-top: 60px;
+
+  }
+
+  .imagem-modal {
+    min-height: calc(100vw - 60px);
+
+  }
+
+  .informacoes .titulo-info {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .informacoes .descricao {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .informacoes .sub-titulo {
+    font-size: 24px;
+    line-height: 20px;
+  }
+
+  .informacoes ul li {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
   .titulo {
     font-size: 30px;
     margin-top: 30px;
@@ -110,10 +384,10 @@ export default {
 
   .ver {
     margin-top: calc(50% - 20px);
-    width: calc(100% - 20px);
+    width: calc(100%);
     text-align: center;
     background-color: white;
-    height: 20px;
+    height: 40px;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -121,4 +395,7 @@ export default {
     color: #000000;
     transition: 0.3s;
   }
-}</style>
+
+
+}
+</style>

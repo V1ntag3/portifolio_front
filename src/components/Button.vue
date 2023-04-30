@@ -1,8 +1,8 @@
 <template>
-        <div :onclick="acao" class="botao-completo" >
-            <div class="botao">{{ texto }}</div>
-            <div class="botao botao-sombra">{{ texto }}</div>
-        </div>
+    <div :onclick="acao" :class="'botao-completo ' + classB">
+        <div class="botao">{{ texto }}</div>
+        <div class="botao botao-sombra">{{ texto }}</div>
+    </div>
 </template>
   
 <script>
@@ -14,14 +14,18 @@ export default {
     props: {
         acao: String,
         texto: String,
-        class: Boolean
+        classB: String
 
+    },
+    data() {
+        return {
+
+        }
     }
 }
 </script>
   
 <style>
-
 .botao-completo {
     cursor: pointer;
     transition: 0.5s;
@@ -54,5 +58,16 @@ export default {
     color: transparent;
     z-index: 1;
 }
+
+.button-modal {
+    margin-left:30px;
+}
+@media (max-width: 1110px) {
+    .button-modal{
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
 </style>
   
