@@ -28,7 +28,7 @@ export default {
 <style>
 @import url(assets/fonts-Abster.css);
 @import url(assets/fonts-Poppins.css);
-
+@import url(assets/fonts-Bethany.css);
 * {
   border: none;
   outline: none;
@@ -37,8 +37,13 @@ export default {
   font-family: 'Poppins-Regular';
   list-style-type: none;
   scroll-behavior: smooth;
-}
+  font-style: normal;
+  color: #FFFFFF;
 
+}
+.bethany{
+  font-family: 'Bethany';
+}
 body {
   background-color: #4D4949;
 }

@@ -6,12 +6,12 @@
     <div v-bind:class="{ 'menu-opcoes-aberto': aberto }" class="menu-opcoes">
         <div v-bind:class="{ 'opcoes-aberto': aberto }" class="opcoes">
             <ul>
-                <li style="margin-top: 0px;"><a href="#home"><span>home</span></a></li>
-                <li><a href="#hab"><span>habilidades</span></a></li>
-                <li><a href="#cert"><span>certificações</span></a></li>
-                <li><a href="#exp"><span>experiência</span></a></li>
-                <li><a href="#pot"><span>portifólio</span></a></li>
-                <li><a href="#cont"><span>contate me</span></a></li>
+                <li style="margin-top: 0px;"><a href="#home" @click="aberto = false"><span>home</span></a></li>
+                <li><a href="#hab" @click="aberto = false"><span>habilidades</span></a></li>
+                <li><a href="#cert" @click="aberto = false"><span>certificações</span></a></li>
+                <li><a href="#exp" @click="aberto = false"><span>experiência</span></a></li>
+                <li><a href="#port" @click="aberto = false"><span>portifólio</span></a></li>
+                <li><a href="#cont" @click="aberto = false"><span>contate me</span></a></li>
             </ul>
             <div v-bind:class="{ 'social-aberto': abertoSocial }" class="social">
                 <a :href="behance" target="_blank">
@@ -113,6 +113,7 @@ export default {
     width: 50px;
     height: 50px;
     z-index: 4;
+    cursor: pointer;
 }
 
 .line {

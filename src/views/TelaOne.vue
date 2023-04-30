@@ -1,5 +1,5 @@
 <template>
-   <div id="home" class="tela">
+  <div id="home" class="tela">
     <div class="informativo">
       <div class="info">
         <div class="titulo"><span>O</span>lá, sou Marcos</div>
@@ -9,14 +9,14 @@
           </span>
         </div>
         <a :href="`${publicPath}${curriculo}`" target="_blank">
-        <ButtonApp  texto="currículo" />
-      </a>
-        </div>
+          <ButtonApp texto="currículo" />
+        </a>
+      </div>
     </div>
     <div class="imagem">
-        <div class="borda-imagem">
-          <img src="../assets/images/eu.jpeg" alt="">  
-        </div>
+      <div class="borda-imagem">
+        <img src="../assets/images/eu.jpeg" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -26,17 +26,17 @@ import ButtonApp from "../components/Button.vue"
 
 
 export default {
-name: 'Tela1App',
-components:{
-  ButtonApp
-},
-data(){
-  return{
-    publicPath: process.env.BASE_URL,
-    curriculo:"curriculo.pdf",
-    mensagemInicial:"Aqui você poderar ver um pouco do meu trabalho como desenvolvedor, minhas qualificações e meus projetos pessoais durate minha carreira."
+  name: 'Tela1App',
+  components: {
+    ButtonApp
+  },
+  data() {
+    return {
+      publicPath: process.env.BASE_URL,
+      curriculo: "curriculo.pdf",
+      mensagemInicial: "Aqui você poderar ver um pouco do meu trabalho como desenvolvedor, minhas qualificações e meus projetos pessoais durate minha carreira."
+    }
   }
-}
 }
 </script>
 
@@ -46,7 +46,6 @@ data(){
 }
 
 .titulo {
-  font-style: normal;
   font-weight: 600;
   font-size: 54px;
   color: #FFFFFF;
@@ -59,17 +58,14 @@ data(){
 
 .sub-titulo span {
   font-family: 'Poppins-ExtraLight' !important;
-  font-style: normal;
   font-weight: 275;
   font-size: 34px;
   text-align: justify;
-  color: #FFFFFF;
   margin-bottom: 60px;
-
 }
 
 .informativo {
-  width: calc(55%);
+  width: 55%;
   height: 100vh;
   display: inline-block;
   padding: 0px 60px;
@@ -87,17 +83,19 @@ data(){
   background-color: black;
   display: inline-block;
 }
-.borda-imagem img{
-    width: calc(100% - 40px);
-    height: calc(100% - 40px);
-    object-fit: cover;
-    margin: 20px;
-    border-bottom: 3px solid #fff;
-    border-left: 3px solid #fff;
-    margin-left: 0px;
-    margin-top: 37px;    
+
+.borda-imagem img {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  object-fit: cover;
+  margin: 20px;
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  margin-left: 0px;
+  margin-top: 37px;
 }
-.borda-imagem{
+
+.borda-imagem {
   height: calc(100% - 100px);
   margin: 50px;
   border-top: 3px solid white;
@@ -106,47 +104,55 @@ data(){
 }
 
 @media (max-width:1110px) {
-  .borda-imagem img{
+  .borda-imagem img {
     width: calc(100vw - 160px);
     height: calc(100vh - 170px);
   }
-  .tela{
+
+  .tela {
     display: block;
   }
+
   .informativo {
     width: auto;
     display: grid;
     padding-right: 100px;
   }
+
   .imagem {
     width: auto;
     display: grid;
   }
-  .informativo .info{
+
+  .informativo .info {
     max-width: unset;
   }
 }
+
 @media (max-width:665px) {
-  .titulo{
+  .titulo {
     font-size: 29.5px;
   }
-  .titulo span{
+
+  .titulo span {
     font-size: 65px;
   }
-  .sub-titulo span{
+
+  .sub-titulo span {
     font-size: 24px;
   }
-  .sub-titulo{
+
+  .sub-titulo {
     margin-bottom: 15vh;
-    }
-  .informativo{
+  }
+
+  .informativo {
     padding: 0px 40px;
     padding-right: 20px;
   }
+
   .informativo .info {
     margin-top: 45%;
     max-width: 640px;
-}
-}
-
-</style>
+  }
+}</style>

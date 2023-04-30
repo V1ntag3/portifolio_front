@@ -2,20 +2,17 @@
   <div class="tela">
     <div class="informativo">
       <div id="hab" class="titulo"> <span>habilidades</span> </div>
-      <canvas style="width: 80%; height: 80%;margin: auto;
-      display: block;" width="600" height="600" id="tagCanvas"></canvas>
+      <canvas style="margin: auto;display: block;width: 80%; height: 80%;" width="600" height="600" id="tagCanvas"></canvas>
     </div>
-
 
     <div id="tags" style="font-size: 10%">
       <a v-for="(item, index) in tecnologias" :key="index" href="#hab" style="font-size: 35px">{{ item }}</a>
     </div>
 
-
     <div class="imagem">
-      <div id="cert" class="titulo"> <span>certificações</span> </div>
+      <div id="cert" class="titulo"><span>certificações</span></div>
       <div v-for="(item, index) in certificados" :key="index" class="curso">
-        <div class="icon"><img src="" alt=""></div>
+        <div class="icon"><img :src="`${publicPath}${item.imagem}`" alt=""></div>
         <div class="dados">
           <div class="nome">{{ item.nome }}</div>
           <div class="local">{{ item.local }} - {{ item.data }}</div>
@@ -23,7 +20,7 @@
       </div>
       <div id="exp">
         <div id="cert" class="titulo"> <span>experiência</span> </div>
-        <div v-for="(item,index) in experiencias" :key="index" class="exp">
+        <div v-for="(item, index) in experiencias" :key="index" class="exp">
           <div class="dados">
             <div class="cargo">{{ item.cargo }} - {{ item.tipo }}</div>
             <div class="local">{{ item.local }}</div>
@@ -47,6 +44,7 @@ export default {
   },
   data() {
     return {
+      publicPath: process.env.BASE_URL,
       tecnologias: [
         'Vue.js',
         'REST',
@@ -66,21 +64,21 @@ export default {
         'CSS',
         'Ajax',
       ],
-      certificados:[
+      certificados: [
         {
-          imagem:"",
-          nome:"Desenvolvimento Web FullStack",
-          local:"ProgramdorBR",
-          data:"2022"
+          imagem: "img/certificados/1.png",
+          nome: "Desenvolvimento Web FullStack",
+          local: "ProgramdorBR",
+          data: "2022"
         }
       ],
-      experiencias:[
+      experiencias: [
         {
-          cargo:"Desenvolvedor Front-End",
-          tipo:"Estágio",
-          local:"InfoG2 Tecnologia LTDA - Teresina - PI",
-          dataInicial:"Out 2022",
-          dataFinal:"Abr 2023"
+          cargo: "Desenvolvedor Front-End",
+          tipo: "Estágio",
+          local: "InfoG2 Tecnologia LTDA - Teresina - PI",
+          dataInicial: "Out 2022",
+          dataFinal: "Abr 2023"
         }
       ]
     }
@@ -100,30 +98,26 @@ export default {
 
 .titulo {
   font-family: 'Poppins-Bold' !important;
-  font-style: normal;
   font-weight: 700;
   font-size: 40px;
-  color: #FFFFFF;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 20px;
 }
 
-.informativo {
-  width: 50%;
-  height: auto;
-  display: inline-block;
-}
-
-
+.informativo,
 .imagem {
   width: 50%;
   height: auto;
   display: inline-block;
+}
+
+.imagem {
   border-left: 3px solid #FFFFFF;
   padding: 0px 40px;
 }
 
+/* Curso CSS */
 .curso {
   display: flex;
   margin-bottom: 10px;
@@ -142,32 +136,25 @@ export default {
 }
 
 .curso .nome {
-  font-style: normal;
   font-weight: 600;
   font-size: 23px;
-  color: #FFFFFF;
 }
 
 .curso .local {
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  color: #FFFFFF;
 }
 
+/* Experiência CSS */
 .exp {
   background-color: black;
-  color: white;
   padding: 8px 10px;
   border-radius: 10px;
 }
 
 .exp .dados {
-  font-style: normal;
   font-weight: 700;
   font-size: 25px;
-  color: #FFFFFF;
-
 }
 
 @media (max-width:1110px) {
@@ -175,18 +162,15 @@ export default {
     display: block;
   }
 
-  .informativo {
+  .informativo,
+  .imagem {
     width: auto;
     display: block;
   }
 
   .imagem {
-    width: auto;
-    display: block;
     border: none;
-
   }
-
 }
 
 @media (max-width:665px) {
@@ -205,6 +189,7 @@ export default {
     padding: 0px 15px;
   }
 
+  /* Curso */
   .curso {
     display: flex;
   }
@@ -223,28 +208,19 @@ export default {
   }
 
   .curso .nome {
-    font-style: normal;
-    font-weight: 600;
     font-size: 16px;
-    color: #FFFFFF;
   }
 
   .curso .local {
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
-    color: #FFFFFF;
   }
 
   .exp {
     padding: 8px;
-
   }
 
   .exp .dados {
-
     font-size: 16px;
-
   }
 
 }

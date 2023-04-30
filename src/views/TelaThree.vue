@@ -1,9 +1,10 @@
 <template>
   <div class="tela">
-    <div id="cert" class="titulo"> <span>portifólio</span> </div>
+    <div id="port" class="titulo"> <span>portifólio</span> </div>
     <div class="portifolio">
 
       <div v-for="(item, index) in projetos" :key="index" @click="abrirModal(index)" class="item">
+        <img :src="`${publicPath}${item.imagemTela}`" alt="" class="img-port">
         <div class="ver">ver projeto</div>
       </div>
 
@@ -12,12 +13,13 @@
   <div v-bind:class="{ 'modal-ativo': ativo }" class="modal-projeto">
     <div class="modal-flex">
       <div class="imagem-modal">
+        <img class="img-tela" :src="`${publicPath}${projetos[currentIndex].imagemTela}`" alt="" srcset=""> 
         <div v-if="projetos[currentIndex].isMy == true" class="name-imagem"><span> <img src="../assets/images/check.svg"
               alt=""> design by me</span></div>
       </div>
       <div class="informacoes">
 
-        <h1 class="titulo-info">{{ projetos[currentIndex].nome }}</h1>
+        <h1 :style="'font-family:'+projetos[currentIndex].fontText" class="titulo-info">{{ projetos[currentIndex].nome }}</h1>
         <p class="descricao">{{ projetos[currentIndex].descricao }}</p>
         <h2 class="sub-titulo">Tecnologias Utilizadas</h2>
         <ul>
@@ -58,12 +60,13 @@ export default {
   },
   data() {
     return {
+      publicPath: process.env.BASE_URL,
       ativo: false,
       currentIndex: 0,
       projetos: [
         {
           nome: "Apresentação e Portifólio",
-          fontText: "Poppins-Regular",
+          fontText: "Poppins-Bold",
           descricao: "Meu site onde faço uma apresentação sobre mim e mostro as tecnologia que eu conheço e os projetos que desenvolvi.",
           tecnologias: [
             "HTML",
@@ -71,23 +74,23 @@ export default {
             "JavaScript",
             "Vue.js"
           ],
-          imagemTela: "",
-          siteProjeto: "https://github.com/V1ntag3/portifolio_front",
-          front: "",
+          imagemTela: "img/projetos/1.png",
+          siteProjeto: "",
+          front: "https://github.com/V1ntag3/portifolio_front",
           back: "",
           design: "https://www.figma.com/file/0UAQjCP4Q6J94cN6yTDrTq/Portif%C3%B3lio?t=Hj0hwq0BNnylU18h-6",
           isMy: true
         },
         {
-          nome: "Churrascometro",
-          fontText: "Bettany",
+          nome: "Churrascômetro",
+          fontText: "Bethany",
           descricao: "Web App onde se pode calcular a quantidade de carne, refrigerante e ceverja que será necessario em um churrasco",
           tecnologias: [
             "HTML",
             "CSS",
             "JavaScript"
           ],
-          imagemTela: "",
+          imagemTela: "img/projetos/2.png",
           siteProjeto: "https://v1ntag3.github.io/churrascometro/",
           front: "https://github.com/V1ntag3/churrascometro",
           back: "",
@@ -104,28 +107,37 @@ export default {
   methods: {
     fecharModal() {
       this.ativo = false
+      var el = document.querySelector('body')
+      el.style.overflow =""
     },
     abrirModal(index) {
       this.currentIndex = index
       this.ativo = true
+      var el = document.querySelector('body')
+      el.style.overflow ="hidden"
     }
   }
 }
 </script>
 
 <style scoped>
+/* Modal CSS */
 .close-modal {
   display: none;
   position: absolute;
   top: 30px;
   right: 27px;
+  padding-top: 20px;
+    margin-top: -20px;
+    height: 40px;
+    cursor: pointer;
 }
 
 .modal-projeto {
   border: 3px solid white;
   background-color: black;
   width: 90%;
-  height: 80%;
+  height: auto;
   position: fixed;
   top: -100%;
   left: 5%;
@@ -162,12 +174,17 @@ export default {
   transition: 0.5s;
 }
 
-
+.img-tela{
+  max-width: 490px;
+    max-height: 214px;
+    width: 100%;
+    height: 96vw;
+}
 
 .imagem-modal {
   background-color: white;
   width: 490px;
-  height: 470px;
+  height: 216px;
   position: relative;
   padding: 1px;
   display: flex;
@@ -180,46 +197,35 @@ export default {
   color: #3183FF;
 
 }
-
+.name-imagem .img-tela{
+  width: 100%;
+}
 .informacoes {
   width: calc(100% - 400px);
   margin-left: 20px;
 }
 
 .informacoes .titulo-info {
-  font-style: normal;
-  font-weight: 700;
   font-size: 40px;
-  line-height: 60px;
-  color: #FFFFFF;
+  margin-top: 15px;
 }
 
 .informacoes .descricao {
-  font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 34px;
-
-  color: #FFFFFF;
 }
 
 .informacoes .sub-titulo {
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 34px;
-
-  color: #FFFFFF;
 }
 
 .informacoes ul li {
-  font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 25px;
-
-  color: #FFFFFF;
-
 }
 
 .botoes {
@@ -227,14 +233,14 @@ export default {
   height: 70px;
   width: 100%;
   display: flex;
+  justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .titulo {
   font-family: 'Poppins-Bold' !important;
-  font-style: normal;
   font-weight: 700;
   font-size: 40px;
-  color: #FFFFFF;
   text-align: center;
   margin-top: 50px;
   margin-bottom: 20px;
@@ -249,37 +255,49 @@ export default {
 }
 
 .item {
-  background-color: gray;
+  background-color: transparent;
   height: 200px;
   width: 200px;
   cursor: pointer;
   transition: 0.2s;
-}
 
-.item:hover {
+
+}
+.img-port{
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  transition: 0.2s;
+}
+.item:hover .img-port{
   scale: 1.3;
   margin-left: 30px;
+  z-index: 3;
 }
 
 .ver {
-  margin-top: calc(50% - 40px);
   width: 100%;
   text-align: center;
   background-color: white;
   height: 75px;
-  font-style: normal;
   font-weight: 700;
   font-size: 25px;
   padding: 20px;
   color: #000000;
   opacity: 0;
   transition: 0.3s;
+  margin-top: -135px;
+    position: relative;
 }
 
 .item:hover .ver {
   opacity: 1;
+  scale: 1.3;
+  margin-left: 30px;
 }
-
+.ver:hover .img-port{
+  scale: 1.3;
+}
 @media (max-width: 1110px) {
   .close-modal {
     display: unset;
@@ -310,7 +328,7 @@ export default {
 
   .imagem-modal {
     max-width: 490px;
-    max-height: 470px;
+    max-height: 216px;
     width: 100%;
     height: 96vw;
     display: block;
@@ -327,14 +345,15 @@ export default {
 
   .informacoes {
     width: 100%;
-    margin-left: 20px;
+    margin-left: 0px;
   }
 
   .botoes {
     height: 70px;
     width: 100%;
-    display: block;
+    display: grid;
     margin: auto;
+   
   }
 
 }
@@ -347,7 +366,7 @@ export default {
   }
 
   .imagem-modal {
-    min-height: calc(100vw - 60px);
+    height: calc(90vh);
 
   }
 
@@ -367,8 +386,8 @@ export default {
   }
 
   .informacoes ul li {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   .titulo {
@@ -381,7 +400,13 @@ export default {
     height: 100px;
     width: 100px;
   }
-
+  .img-port{
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+  transition: 0.5s;
+  z-index: 1;
+}
   .ver {
     margin-top: calc(50% - 20px);
     width: calc(100%);
@@ -395,7 +420,8 @@ export default {
     color: #000000;
     transition: 0.3s;
   }
-
-
+}
+@media (min-width: 515px){
+  height: ;
 }
 </style>
