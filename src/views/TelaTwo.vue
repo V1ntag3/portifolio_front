@@ -200,6 +200,9 @@ export default {
     height: 60px;
     border-radius: 15px;
   }
+  .curso .icon img{
+  width: 60px;
+  }
 
   .curso .dados {
     padding: 5px 10px;

@@ -160,4 +160,10 @@ export default {
     width: calc(100% - 18vw);
     margin: 10px 9vw;
   }
+  .erro{
+
+    width: calc(100% - 18vw);
+
+
+  }
 }</style>
