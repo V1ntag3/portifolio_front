@@ -1,5 +1,5 @@
 <template>
-  <div class="tela">
+  <div class="tela" data-anima="centro">
     <div id="cont" class="titulo"> <span>contate me</span> </div>
     <div class="dados">
       <div class="texto">

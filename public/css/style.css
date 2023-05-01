@@ -1,0 +1,25 @@
+/* Animacoes */
+
+[data-anima] {
+	opacity: 0;
+	transition: 0.7s;
+}
+
+[data-anima="esquerda"] {
+	transform: translate3d(-200px, 0, 0);
+}
+
+[data-anima="direita"] {
+	transform: translate3d(200px, 0, 0);
+
+}
+
+[data-anima="centro"] {
+	transform: translate3d(0px, 200, 0);
+
+}
+
+[data-anima].animacao {
+	opacity: 1;
+	transform: translate3d(0, 0, 0)
+}

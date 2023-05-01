@@ -1,6 +1,6 @@
 <template>
-  <div class="tela">
-    <div class="informativo">
+  <div class="tela" >
+    <div class="informativo" data-anima="esquerda">
       <div id="hab" class="titulo"> <span>habilidades</span> </div>
       <canvas style="margin: auto;display: block;width: 80%; height: 80%;" width="600" height="600" id="tagCanvas"></canvas>
     </div>
@@ -9,7 +9,7 @@
       <a v-for="(item, index) in tecnologias" :key="index" href="#hab" style="font-size: 35px">{{ item }}</a>
     </div>
 
-    <div class="imagem">
+    <div class="imagem" data-anima="direita">
       <div id="cert" class="titulo"><span>certificações</span></div>
       <div v-for="(item, index) in certificados" :key="index" class="curso">
         <div class="icon"><img :src="`${publicPath}${item.imagem}`" alt=""></div>

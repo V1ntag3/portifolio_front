@@ -1,8 +1,8 @@
 <template>
-  <div id="home" class="tela">
-    <div class="informativo">
+  <div id="home" class="tela" >
+    <div class="informativo" data-anima="esquerda">
       <div class="info">
-        <div class="titulo"><span>O</span>lá, sou Marcos</div>
+        <div id="titulo" aria-label=" Olá, sou Marcos" class="blast-root titulo" ><span>O</span>lá, sou Marcos</div>
         <div class="sub-titulo">
           <span>
             {{ mensagemInicial }}
@@ -13,7 +13,7 @@
         </a>
       </div>
     </div>
-    <div class="imagem">
+    <div class="imagem" data-anima="direita">
       <div class="borda-imagem">
         <img src="../assets/images/eu.jpeg" alt="">
       </div>

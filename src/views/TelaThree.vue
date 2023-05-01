@@ -1,5 +1,5 @@
 <template>
-  <div class="tela">
+  <div class="tela" data-anima="centro">
     <div id="port" class="titulo"> <span>portifólio</span> </div>
     <div class="portifolio">
 
@@ -436,5 +436,4 @@ export default {
 }
 
 @media (min-width: 515px) {
-  height: ;
 }</style>

@@ -46,6 +46,7 @@ export default {
 }
 body {
   background-color: #4D4949;
+  overflow-x: hidden;
 }
 
 
