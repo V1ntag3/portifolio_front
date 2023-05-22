@@ -48,6 +48,8 @@ body {
   background-color: #4D4949;
   overflow-x: hidden;
 }
-
+html{
+  overflow-x: hidden
+}
 
 </style>

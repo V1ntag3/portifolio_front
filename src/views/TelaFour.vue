@@ -20,7 +20,7 @@
       <ButtonApp texto="enviar" />
     </div>
     </div>
-    <div class="footid" style="margin-bottom: 20px;"> <span><a :href="gitHub" _black>BY V1NTAG3</a> </span> </div>
+    <div class="footid" style="margin-bottom: 20px;"> <span><a :href="gitHub" target="_blank">BY V1NTAG3</a> </span> </div>
   </div>
 </template>
 
