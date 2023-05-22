@@ -44,6 +44,11 @@ $(document).ready(function(){
             })
         }
         animaScrool()
+        setTimeout(() => {
+            ResponsiveTCforIE('tagCanvas');
+
+        }, 200);
+
     }, 400);
 });
 
