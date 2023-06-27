@@ -43,7 +43,7 @@ Inicie o servidor
 
 ## Aprendizados
 
-Com esse pequeno projeto consegui relembrar um pouco dos coneceitos utilizados no Vue 3.
+Com esse pequeno projeto consegui relembrar um pouco dos coneceitos utilizados no Vue 3. Além de por em prática o desenvolvimento responsivo.
 
 
 ## Suporte
