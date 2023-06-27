@@ -9,6 +9,10 @@ O site está hospedado em: https://curious-phoenix-ed69f1.netlify.app
 
 **Front-end:** HTML, CSS, JavaScript, Vue.js.
 
+## Design Figma
+
+Design pode ser encontrado em: https://www.figma.com/file/0UAQjCP4Q6J94cN6yTDrTq?type=design
+
 
 ## Rodando localmente
 
