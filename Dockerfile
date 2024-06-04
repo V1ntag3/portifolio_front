@@ -37,6 +37,6 @@ RUN yarn install --production
 
 COPY --chown=node:node . ./
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
