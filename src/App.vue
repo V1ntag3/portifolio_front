@@ -27,8 +27,7 @@ export default {
 
 <style>
 @import url(css/fonts.css);
-@import url(assets/fonts-Abster.css);
-@import url(assets/fonts-Bethany.css);
+@import url(css/style.css);
 * {
   border: none;
   outline: none;
@@ -41,15 +40,17 @@ export default {
   color: #FFFFFF;
 
 }
-.bethany{
+
+.bethany {
   font-family: 'Bethany';
 }
+
 body {
   background-color: #4D4949;
   overflow-x: hidden;
 }
-html{
+
+html {
   overflow-x: hidden
 }
-
 </style>

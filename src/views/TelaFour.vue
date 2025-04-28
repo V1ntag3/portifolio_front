@@ -63,7 +63,6 @@ export default {
 </script>
 
 <style scoped>
-@import url(../assets/fonts-Abster.css);
 .erro{
   height: 1px;
     border-bottom: #ff3434 2px solid;

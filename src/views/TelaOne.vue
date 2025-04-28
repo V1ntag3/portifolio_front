@@ -1,8 +1,12 @@
 <template>
-  <div id="home" class="tela" >
+  <div id="home" class="tela">
     <div class="informativo" data-anima="esquerda">
       <div class="info">
-        <div id="titulo" aria-label=" Olá, sou Marcos" class="blast-root titulo" ><span style="font-weight: bold;">O</span>lá, sou Marcos</div>
+        <div id="titulo" aria-label=" Olá, sou Marcos" class="blast-root titulo"><span
+            style="font-weight: bold;">O</span>lá, sou Marcos</div>
+        <span class="emprego">
+          Desenvoldedor Front-End
+        </span>
         <div class="sub-titulo">
           <span>
             {{ mensagemInicial }}
@@ -14,9 +18,7 @@
       </div>
     </div>
     <div class="imagem" data-anima="direita">
-      <div class="borda-imagem">
-        <img src="../assets/images/eu.jpeg" alt="">
-      </div>
+      <img src="../assets/images/eu.jpeg" alt="">
     </div>
   </div>
 </template>
@@ -34,7 +36,7 @@ export default {
     return {
       publicPath: process.env.BASE_URL,
       curriculo: "curriculo.pdf",
-      mensagemInicial: "Aqui você poderar ver um pouco do meu trabalho como desenvolvedor, minhas qualificações e meus projetos pessoais durate minha carreira."
+      mensagemInicial: "Aqui você poderá conhecer melhor meu trabalho como desenvolvedor front-end, minhas habilidades, experiências e projetos pessoais."
     }
   }
 }
@@ -49,6 +51,16 @@ export default {
   font-weight: 600;
   font-size: 54px;
   color: #FFFFFF;
+}
+
+.emprego {
+  font-family: 'Poppins' !important;
+  font-weight: 600;
+  font-size: 25px;
+  text-align: justify;
+  margin-bottom: 60px;
+  color: #3183FF;
+  margin-bottom: 28px;
 }
 
 .titulo span {
@@ -66,7 +78,7 @@ export default {
 }
 
 .informativo {
-  width: 55%;
+  flex: 1;
   height: 100vh;
   display: inline-block;
   padding: 0px 60px;
@@ -79,36 +91,19 @@ export default {
 }
 
 .imagem {
-  width: 45%;
   height: 100vh;
-  background-color: black;
+  padding: 30px;
   display: inline-block;
 }
 
-.borda-imagem img {
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
-  object-fit: cover;
-  margin: 20px;
-  border-bottom: 3px solid #fff;
-  border-left: 3px solid #fff;
-  margin-left: 0px;
-  margin-top: 37px;
-}
-
-.borda-imagem {
-  height: calc(100% - 100px);
-  margin: 50px;
-  border-top: 3px solid white;
-  border-right: 3px solid white;
-
+.imagem img {
+  height: fit-content;
+  border-radius: 25px;
+  width: 100%;
+  max-height: 100%;
 }
 
 @media (max-width:1110px) {
-  .borda-imagem img {
-    width: calc(100vw - 160px);
-    height: calc(100vh - 170px);
-  }
 
   .tela {
     display: block;
@@ -156,4 +151,5 @@ export default {
     margin-top: 45%;
     max-width: 640px;
   }
-}</style>
+}
+</style>

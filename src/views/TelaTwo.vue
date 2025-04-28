@@ -20,6 +20,7 @@
       </div>
       <div id="exp">
         <div id="cert" class="titulo"> <span>experiência</span> </div>
+      <div class="experiencias" >
         <div v-for="(item, index) in experiencias" :key="index" class="exp">
           <div class="dados">
             <div class="cargo">{{ item.cargo }} - {{ item.tipo }}</div>
@@ -27,6 +28,7 @@
             <div class="data">{{ item.dataInicial }} - {{ item.dataFinal }}</div>
           </div>
         </div>
+       </div>
       </div>
     </div>
 
@@ -79,6 +81,20 @@ export default {
           local: "InfoG2 Tecnologia LTDA - Teresina - PI",
           dataInicial: "Out 2022",
           dataFinal: "Abr 2023"
+        },
+        {
+          cargo: "Desenvolvedor Front-End",
+          tipo: "Estágio",
+          local: "INKLESS Simples Inova - Teresina - PI",
+          dataInicial: "Out 2023",
+          dataFinal: "Maio 2024"
+        },
+        {
+          cargo: "Desenvolvedor Front-End",
+          tipo: "Freelancer",
+          local: "Alencar Soluções Tecnológicas - Teresina - PI",
+          dataInicial: "Maio 2024",
+          dataFinal: "Momento"
         }
       ]
     }
@@ -146,6 +162,11 @@ export default {
 }
 
 /* Experiência CSS */
+.experiencias{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .exp {
   background-color: black;
   padding: 8px 10px;

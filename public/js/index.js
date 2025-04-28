@@ -9,7 +9,8 @@ function ResponsiveTCforIE(c) {
         e.style.height = (rw * e.height / e.width) + 'px';
     }
 }
-$(document).ready(function(){
+
+$(document).ready(function () {
     setTimeout(() => {
         const elementosAnim = document.querySelectorAll('[data-anima]')
         const animacaoClass = 'animacao'
@@ -28,18 +29,18 @@ $(document).ready(function(){
             clickToFront: 0.5
         }, 'tags')
         ResponsiveTCforIE('tagCanvas');
-        function animaScrool(){
-            const topo = window.pageYOffset + ((window.innerHeight * 2)/4)
-            elementosAnim.forEach(function(elemento){
-                if(topo > elemento.offsetTop){
+        function animaScrool() {
+            const topo = window.pageYOffset + ((window.innerHeight * 2) / 4)
+            elementosAnim.forEach(function (elemento) {
+                if (topo > elemento.offsetTop) {
                     elemento.classList.add(animacaoClass)
-                }else{
+                } else {
                     elemento.classList.remove(animacaoClass)
                 }
             })
         }
-        if(elementosAnim.length){
-            window.addEventListener('scroll',function(){
+        if (elementosAnim.length) {
+            window.addEventListener('scroll', function () {
                 animaScrool()
             })
         }

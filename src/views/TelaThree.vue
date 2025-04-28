@@ -19,7 +19,8 @@
       </div>
       <div class="informacoes">
 
-        <h1 :style="'font-family:' + projetos[currentIndex].fontText" class="titulo-info">{{ projetos[currentIndex].nome }}
+        <h1 :style="'font-family:' + projetos[currentIndex].fontText" class="titulo-info">{{ projetos[currentIndex].nome
+          }}
         </h1>
         <p class="descricao">{{ projetos[currentIndex].descricao }}</p>
         <h2 class="sub-titulo">Tecnologias Utilizadas</h2>
@@ -68,7 +69,6 @@ export default {
         {
           nome: "Apresentação e Portifólio",
           fontText: "Poppins",
-          fontWeight: "bold",
           descricao: "Meu site onde faço uma apresentação sobre mim e mostro as tecnologia que eu conheço e os projetos que desenvolvi.",
           tecnologias: [
             "HTML",
@@ -83,18 +83,79 @@ export default {
           design: "https://www.figma.com/file/0UAQjCP4Q6J94cN6yTDrTq/Portif%C3%B3lio?t=Hj0hwq0BNnylU18h-6",
           isMy: true
         },
+        // {
+        //   nome: "Churrascômetro",
+        //   fontText: "Bethany",
+        //   descricao: "Web App onde se pode calcular a quantidade de carne, refrigerante e ceverja que será necessario em um churrasco",
+        //   tecnologias: [
+        //     "HTML",
+        //     "CSS",
+        //     "JavaScript"
+        //   ],
+        //   imagemTela: "img/projetos/2.png",
+        //   siteProjeto: "https://v1ntag3.github.io/churrascometro/",
+        //   front: "https://github.com/V1ntag3/churrascometro",
+        //   back: "",
+        //   design: "",
+        //   isMy: true
+        // },
         {
-          nome: "Churrascômetro",
-          fontText: "Bethany",
-          descricao: "Web App onde se pode calcular a quantidade de carne, refrigerante e ceverja que será necessario em um churrasco",
+          nome: "HandManga",
+          fontText: "Poppins",
+          descricao: "Aplicativo onde o usuário pode ler mangás, utiliznado a API do MangaDex.",
+          tecnologias: [
+            "React Native"
+          ],
+          imagemTela: "img/projetos/3.jpg",
+          siteProjeto: "https://github.com/V1ntag3/HandManga",
+          front: "",
+          back: "",
+          design: "",
+          isMy: true
+        },
+        {
+          nome: "Groomify",
+          fontText: "Poppins",
+          descricao: "Sistema para agendamentos de serviços de barbearias e estética.",
           tecnologias: [
             "HTML",
             "CSS",
-            "JavaScript"
+            "JavaScript",
+            "React.js",
+            "Ruby on Rails"
           ],
-          imagemTela: "img/projetos/2.png",
-          siteProjeto: "https://v1ntag3.github.io/churrascometro/",
-          front: "https://github.com/V1ntag3/churrascometro",
+          imagemTela: "img/projetos/4.png",
+          siteProjeto: "",
+          front: "",
+          back: "",
+          design: "",
+          isMy: true
+        },
+        {
+          nome: "ACHEMED Médicos",
+          fontText: "Poppins",
+          descricao: "Aplicativo desenvolvido para a empresa ACHEMED, permitindo que médicos consultem suas agendas e acessem os dados dos pacientes de forma prática e segura. O app está disponível nas lojas de aplicativos. Para utilizar o aplicativo ou conhecer outros serviços, entre em contato diretamente com a ACHEMED.",
+          tecnologias: [
+            "React Native"
+          ],
+          imagemTela: "img/projetos/5.png",
+          siteProjeto: "",
+          front: "",
+          back: "",
+          design: "",
+          isMy: true
+        }
+        ,
+        {
+          nome: "ORGANIZERFINE",
+          fontText: "ABSTER",
+          descricao: "Aplicativo desenvolvido para resolver um problema meu que era organizar as minhas finanças. O app permite que o usuário cadastre suas contas e categorize seus gastos, além de gerar relatórios para facilitar a visualização das despesas.",
+          tecnologias: [
+            "React Native"
+          ],
+          imagemTela: "img/projetos/6.png",
+          siteProjeto: "https://github.com/V1ntag3/OrganizerFine",
+          front: "",
           back: "",
           design: "",
           isMy: true
@@ -179,12 +240,11 @@ export default {
 .img-tela {
   max-width: 490px;
   max-height: 212px;
-  width: 100%;
   height: calc(40vw - 2px);
 }
 
 .imagem-modal {
-  background-color: white;
+  background-color: transparent;
   max-width: 490px;
   max-height: 214px;
   width: 100%;
@@ -192,6 +252,7 @@ export default {
   position: relative;
   padding: 1px;
   display: flex;
+  justify-content: center;
 }
 
 .name-imagem span {
@@ -202,9 +263,7 @@ export default {
 
 }
 
-.name-imagem .img-tela {
-  width: 100%;
-}
+
 
 .informacoes {
   width: calc(100% - 400px);
@@ -436,5 +495,5 @@ export default {
   }
 }
 
-@media (min-width: 515px) {
-}</style>
+@media (min-width: 515px) {}
+</style>
