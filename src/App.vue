@@ -26,15 +26,15 @@ export default {
 </script>
 
 <style>
+@import url(css/fonts.css);
 @import url(assets/fonts-Abster.css);
-@import url(assets/fonts-Poppins.css);
 @import url(assets/fonts-Bethany.css);
 * {
   border: none;
   outline: none;
   margin: 0px;
   padding: 0px;
-  font-family: 'Poppins-Regular';
+  font-family: 'Poppins';
   list-style-type: none;
   scroll-behavior: smooth;
   font-style: normal;

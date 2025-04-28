@@ -20,7 +20,7 @@ $(document).ready(function(){
             depth: 1,
             maxSpeed: 0.02,
             minSpeed: 0.02,
-            textFont: 'Poppins-Regular',
+            textFont: 'Poppins',
             weight: true,
             txtScale: 1.8,
             wheelZoom: false,

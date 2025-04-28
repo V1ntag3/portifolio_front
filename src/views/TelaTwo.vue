@@ -97,7 +97,7 @@ export default {
 }
 
 .titulo {
-  font-family: 'Poppins-Bold' !important;
+  font-family: 'Poppins' !important;
   font-weight: 700;
   font-size: 40px;
   text-align: center;

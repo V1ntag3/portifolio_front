@@ -186,7 +186,8 @@ export default {
 .opcoes li {
     margin-bottom: 15px;
     cursor: pointer;
-    font-family: 'Poppins-Bold';
+    font-family: 'Poppins';
+    font-weight: bold;
 }
 
 li span {

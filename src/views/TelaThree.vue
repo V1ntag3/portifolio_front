@@ -67,7 +67,8 @@ export default {
       projetos: [
         {
           nome: "Apresentação e Portifólio",
-          fontText: "Poppins-Bold",
+          fontText: "Poppins",
+          fontWeight: "bold",
           descricao: "Meu site onde faço uma apresentação sobre mim e mostro as tecnologia que eu conheço e os projetos que desenvolvi.",
           tecnologias: [
             "HTML",
@@ -243,7 +244,7 @@ export default {
 }
 
 .titulo {
-  font-family: 'Poppins-Bold' !important;
+  font-family: 'Poppins' !important;
   font-weight: 700;
   font-size: 40px;
   text-align: center;

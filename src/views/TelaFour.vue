@@ -72,7 +72,8 @@ export default {
     margin: -10px auto 10px auto;
 }
 .titulo {
-  font-family: 'Poppins-Bold' !important;
+  font-family: 'Poppins' !important;
+  font-weight: bold;
   font-weight: 700;
   font-size: 40px;
   text-align: center;

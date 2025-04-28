@@ -2,7 +2,7 @@
   <div id="home" class="tela" >
     <div class="informativo" data-anima="esquerda">
       <div class="info">
-        <div id="titulo" aria-label=" Olá, sou Marcos" class="blast-root titulo" ><span>O</span>lá, sou Marcos</div>
+        <div id="titulo" aria-label=" Olá, sou Marcos" class="blast-root titulo" ><span style="font-weight: bold;">O</span>lá, sou Marcos</div>
         <div class="sub-titulo">
           <span>
             {{ mensagemInicial }}
@@ -57,7 +57,8 @@ export default {
 }
 
 .sub-titulo span {
-  font-family: 'Poppins-ExtraLight' !important;
+  font-family: 'Poppins' !important;
+  font-weight: lighter;
   font-weight: 275;
   font-size: 34px;
   text-align: justify;
