@@ -67,42 +67,9 @@ export default {
       currentIndex: 0,
       projetos: [
         {
-          nome: "Apresentação e Portifólio",
-          fontText: "Poppins",
-          descricao: "Meu site onde faço uma apresentação sobre mim e mostro as tecnologia que eu conheço e os projetos que desenvolvi.",
-          tecnologias: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Vue.js"
-          ],
-          imagemTela: "img/projetos/1.png",
-          siteProjeto: "",
-          front: "https://github.com/V1ntag3/portifolio_front",
-          back: "",
-          design: "https://www.figma.com/file/0UAQjCP4Q6J94cN6yTDrTq/Portif%C3%B3lio?t=Hj0hwq0BNnylU18h-6",
-          isMy: true
-        },
-        // {
-        //   nome: "Churrascômetro",
-        //   fontText: "Bethany",
-        //   descricao: "Web App onde se pode calcular a quantidade de carne, refrigerante e ceverja que será necessario em um churrasco",
-        //   tecnologias: [
-        //     "HTML",
-        //     "CSS",
-        //     "JavaScript"
-        //   ],
-        //   imagemTela: "img/projetos/2.png",
-        //   siteProjeto: "https://v1ntag3.github.io/churrascometro/",
-        //   front: "https://github.com/V1ntag3/churrascometro",
-        //   back: "",
-        //   design: "",
-        //   isMy: true
-        // },
-        {
           nome: "HandManga",
           fontText: "Poppins",
-          descricao: "Aplicativo onde o usuário pode ler mangás, utiliznado a API do MangaDex.",
+          descricao: "Um aplicativo intuitiva onde o usuário pode explorar, ler e acompanhar seus mangás favoritos, integrando diretamente com a API do MangaDex. O app oferece recursos como busca por títulos e leitura vertical e horizontal. A experiência é otimizada com uma interface moderna, suporte a múltiplos idiomas e atualizações em tempo real conforme novos capítulos são lançados.",
           tecnologias: [
             "React Native"
           ],
@@ -116,7 +83,7 @@ export default {
         {
           nome: "Groomify",
           fontText: "Poppins",
-          descricao: "Sistema para agendamentos de serviços de barbearias e estética.",
+          descricao: "Plataforma completa que permite que clientes agendem serviços de forma rápida e prática. O sistema oferece funcionalidades como seleção de serviços, escolha de profissionais, horários disponíveis em tempo real, confirmação e lembretes automáticos por e-mail ou SMS. Para os estabelecimentos, a solução inclui gestão de agenda, controle de fluxo de clientes, relatórios de desempenho e personalização de horários e serviços. Tudo isso com uma interface moderna, responsiva e fácil de usar, tanto para clientes quanto para administradores.",
           tecnologias: [
             "HTML",
             "CSS",
@@ -147,9 +114,9 @@ export default {
         }
         ,
         {
-          nome: "ORGANIZERFINE",
+          nome: "ORGANIZER FINE",
           fontText: "ABSTER",
-          descricao: "Aplicativo desenvolvido para resolver um problema meu que era organizar as minhas finanças. O app permite que o usuário cadastre suas contas e categorize seus gastos, além de gerar relatórios para facilitar a visualização das despesas.",
+          descricao: "Desenvolvido para atender a uma necessidade real de controle financeiro, o app permite que o usuário registre suas contas, categorize seus gastos e acompanhe seus rendimentos de forma simples e eficiente. Com uma interface intuitiva, o aplicativo gera relatórios visuais e gráficos detalhados, facilitando a análise das despesas e ajudando na tomada de decisões. Recursos adicionais incluem alertas de vencimento de contas, metas de economia e exportação de dados, tornando o gerenciamento financeiro mais prático e acessível no dia a dia.",
           tecnologias: [
             "React Native"
           ],
@@ -209,6 +176,8 @@ export default {
   padding: 40px;
   overflow-y: auto;
   transition: 0.5s;
+  max-height: calc(100vh - 145px);
+
 }
 
 .modal-background-ativo {
@@ -384,6 +353,7 @@ export default {
     padding: 40px;
     overflow-y: auto;
     padding-top: 60px;
+    max-height: unset;
   }
 
   .modal-ativo {
@@ -431,6 +401,7 @@ export default {
   .modal-projeto {
     padding: 30px;
     padding-top: 60px;
+    max-height: unset;
 
   }
 

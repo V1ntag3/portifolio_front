@@ -2,8 +2,9 @@
   <div id="home" class="tela">
     <div class="informativo" data-anima="esquerda">
       <div class="info">
-        <div id="titulo" aria-label=" Olá, sou Marcos" class="blast-root titulo"><span
-            style="font-weight: bold;">O</span>lá, sou Marcos</div>
+        <div style="display: flex;">
+          <div id="titulo" aria-label=" Olá, sou Marcos" class="blast-root titulo"></div>
+        </div>
         <span class="emprego">
           Desenvoldedor Front-End
         </span>
@@ -16,9 +17,6 @@
           <ButtonApp texto="currículo" />
         </a>
       </div>
-    </div>
-    <div class="imagem" data-anima="direita">
-      <img src="../assets/images/eu.jpeg" alt="">
     </div>
   </div>
 </template>
@@ -45,7 +43,12 @@ export default {
 <style scoped>
 .tela {
   display: flex;
+  position: relative;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .titulo {
   font-weight: 600;
@@ -59,7 +62,7 @@ export default {
   font-size: 25px;
   text-align: justify;
   margin-bottom: 60px;
-  color: #3183FF;
+  color: #000;
   margin-bottom: 28px;
 }
 
@@ -71,27 +74,24 @@ export default {
 .sub-titulo span {
   font-family: 'Poppins' !important;
   font-weight: lighter;
-  font-weight: 275;
-  font-size: 34px;
+  font-weight: 400;
+  font-size: 24px;
   text-align: justify;
   margin-bottom: 60px;
 }
 
 .informativo {
   flex: 1;
-  height: 100vh;
   display: inline-block;
   padding: 0px 60px;
   padding-left: 100px;
 }
 
 .informativo .info {
-  margin-top: 30%;
   max-width: 750px;
 }
 
 .imagem {
-  height: 100vh;
   padding: 30px;
   display: inline-block;
 }
@@ -100,7 +100,7 @@ export default {
   height: fit-content;
   border-radius: 25px;
   width: 100%;
-  max-height: 100%;
+  max-height: calc(100vh - 100px);
 }
 
 @media (max-width:1110px) {

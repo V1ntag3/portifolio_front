@@ -23,3 +23,17 @@
 	opacity: 1;
 	transform: translate3d(0, 0, 0)
 }
+
+.app {
+	height: 100%;
+}
+
+.typed-cursor {
+	font-size: 54px;
+}
+
+@media (max-width:665px) {
+	.typed-cursor {
+		font-size: 29.5px;
+	}
+}

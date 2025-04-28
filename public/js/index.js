@@ -49,7 +49,25 @@ $(document).ready(function () {
             ResponsiveTCforIE('tagCanvas');
 
         }, 200);
+        VANTA.WAVES({
+            el: "#app-body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 400.00,
+            minWidth: 400.00,
+            scale: 1,
+            scaleMobile: 1.00,
+            color: '#4D4949',
+            // backgroundColor: '#4D4949',
+        })
 
+        new Typed('#titulo', {
+            strings: ['<span style="font-weight: bold; color:#000">O</span>lá, sou Marcos'],
+            typeSpeed: 80,
+            backSpeed: 40,
+            loop:true,
+        });
     }, 400);
 });
 
